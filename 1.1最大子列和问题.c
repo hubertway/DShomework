@@ -15,9 +15,22 @@
 
 #include <stdio.h>
 #include <stdlib.h>
- 
-int MaxSubseqSum( int A[] , int N); 
- 
+
+int MaxSubseqSum( int A[] , int N){
+ 	int ThisSum, MaxSum;
+ 	ThisSum = MaxSum = 0;
+ 	int i;
+ 	for( i = 0; i < N ; i++){
+ 		ThisSum += A[i];
+ 		if(ThisSum > MaxSum){
+ 			MaxSum = ThisSum;
+		 }else if(ThisSum < 0){
+		 	ThisSum = 0;
+		 }
+	 }
+	 return MaxSum; 
+}
+
 int main(){
  	int K;
  	scanf("%d",&K);
@@ -34,17 +47,3 @@ int main(){
  	return 0;
 }
  
-int MaxSubseqSum( int A[] , int N){
- 	int ThisSum, MaxSum;
- 	ThisSum = MaxSum = 0;
- 	int i;
- 	for( i = 0; i < N ; i++){
- 		ThisSum += A[i];
- 		if(ThisSum > MaxSum){
- 			MaxSum = ThisSum;
-		 }else if(ThisSum < 0){
-		 	ThisSum = 0;
-		 }
-	 }
-	 return MaxSum; 
-}
