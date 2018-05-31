@@ -36,7 +36,6 @@ code:
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
 #define MaxVertex 101   
 #define INFINITY 65535  // ∞设为双字节无符号整数的最大值65535
 typedef int Vertex;
